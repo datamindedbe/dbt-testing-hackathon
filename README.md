@@ -24,3 +24,6 @@ dbt run #This will run all the current models
 ```
 
 After this we can start with implementing our first tests!
+
+We have the following test starter docs:
+- [Unit testing](./docs/unit-testing.md)

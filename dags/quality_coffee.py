@@ -57,6 +57,7 @@ def soda_task(*, task_id: str) -> ConveyorContainerOperatorV2:
             "POSTGRES_PASSWORD": AWSParameterStoreValue(
                 name="/conveyor-samples/postgres_password"
             ),
+            "CONNECTION": "quality_coffee",
         },
         cmds=["bash"],
         arguments=["soda/run_soda.sh"],

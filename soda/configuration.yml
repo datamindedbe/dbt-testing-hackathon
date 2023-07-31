@@ -7,3 +7,13 @@ data_source quality_coffee:
     password: ${POSTGRES_PASSWORD}
     database: webinar
     schema: quality_coffee
+
+data_source local:
+  type: postgres
+  connection:
+    host: localhost
+    port: 5432
+    username: postgres
+    password: postgres
+    database: webinar
+    schema: quality_coffee

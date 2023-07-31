@@ -6,7 +6,7 @@ COPY requirements.txt .
 RUN python -m pip install --no-cache -r requirements.txt
 
 WORKDIR /app
-COPY dbt .
+COPY . .
 
 # Set environment variables
 ENV DBT_USE_COLORS="false"

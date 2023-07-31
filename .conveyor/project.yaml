@@ -1,0 +1,15 @@
+docker:
+    path: .
+id: 67d117a3-d8ce-4e17-9af7-ca4af4645ea0
+ide:
+    filename: ide.yaml
+name: quality_coffee_dbt
+resources:
+    path: resources
+streaming:
+    filename: streaming.yaml
+template: ""
+version: "0.3"
+workflows:
+    path: dags
+    version: "2"

@@ -1,0 +1,9 @@
+data_source quality_coffee:
+  type: postgres
+  connection:
+    host: ${POSTGRES_HOST}
+    port: 5432
+    username: postgres
+    password: ${POSTGRES_PASSWORD}
+    database: webinar
+    schema: quality_coffee

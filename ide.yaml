@@ -1,0 +1,4 @@
+vscode:
+  extensions:
+    - mtxr.sqltools@0.28.0
+    - mtxr.sqltools-driver-pg@0.5.1

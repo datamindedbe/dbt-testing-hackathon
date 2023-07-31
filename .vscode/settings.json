@@ -1,3 +1,16 @@
 {
-    "python.venvPath": "venv/bin/python3"
+    "python.defaultInterpreterPath": "${workspaceRoot}/venv/bin/python3",
+    "python.terminal.activateEnvironment": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "localhost",
+            "database": "webinar",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ]
 }

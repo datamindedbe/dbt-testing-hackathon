@@ -128,3 +128,4 @@ dmypy.json
 
 # dbt
 .user.yml
+dbt_packages/

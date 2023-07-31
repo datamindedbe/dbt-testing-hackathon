@@ -28,7 +28,7 @@
     {
       "label": "Install dpt deps",
       "type": "shell",
-      "command": ". venv/bin/active && dbt deps",
+      "command": ". venv/bin/activate && dbt deps",
       "presentation": {
         "reveal": "always",
         "panel": "new"
@@ -37,7 +37,7 @@
         "runOn": "folderOpen"
       },
       "dependsOn": [
-        "Setting up the virtual env\""
+        "Setting up the virtual env"
       ]
     }
   ]

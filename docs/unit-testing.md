@@ -1,11 +1,11 @@
 # Unit testing
 
 To test the dbt models we write, we use a package called dbt_unit_testing by EqualExperts.
-You mock input data (in dbt that means sources or references), you specify the expected output,
-and there’s a slightly scary step where you have to override the ref and source macros, or use the explicit `dbt_unit_testing.` prefix for those two.
-But under the hood they aren't actually adding too much.
+You need mock input data (in dbt that means sources or references), and specify the expected output.
+There’s a slightly scary step where you have to override the ref and source macros,
+or use the explicit `dbt_unit_testing.` prefix. But under the hood they aren't changing too much.
 
-An example of a unit test can be found [here](../tests/unit/test_mart_customers.sql).
+An example of a unit test can be found in [tests/unit/test_mart_customers.sql](../tests/unit/test_mart_customers.sql).
 
 `dbt_unit_testing.test` defines the model being tested and the name of the test.
 
@@ -27,7 +27,7 @@ After this you can try and write your own test!
 ## Writing your own test
 
 I would suggest to start with writing a test for `stg_products` this model has some small logic and only references the `raw_products` table making it easy to implements some tests for it.
-Let's create a file `test_stg_products.sql` in the `tests/unit` folder just like the `test_mart_customers.sql`. 
+Let's create a file `test_stg_products.sql` in the [tests/unit](../tests/unit) folder just like the `test_mart_customers.sql`. 
 
 After that follow the structure of the `test_mart_customers.sql`:
 - `dbt_unit_testing.test` to define a test 

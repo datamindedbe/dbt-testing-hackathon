@@ -59,5 +59,8 @@ We have the following test starter docs:
 - [Macro testing](./docs/macro-testing.md)
 
 
-Some other things you could try out:
+Some other data testing framework you could try out:
 - [elementary](https://github.com/elementary-data/elementary)
+- [re-data](https://github.com/re-data/re-data)
+
+You can also scroll trough the list of projects with the [data-observability](https://github.com/topics/data-observability) tag on github.

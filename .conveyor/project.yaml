@@ -1,9 +1,9 @@
 docker:
     path: .
-id: 67d117a3-d8ce-4e17-9af7-ca4af4645ea0
+id: bfeaa8a1-7aaa-45ca-b4b4-145edafdee4e
 ide:
     filename: ide.yaml
-name: quality_coffee_dbt
+name: dbt-testing-hackaton
 resources:
     path: resources
 streaming:

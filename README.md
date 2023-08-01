@@ -13,7 +13,7 @@ During the Hackaton people get a login for a Conveyor installation, please go to
 After that go to the [dbt-testing-hackaton project](https://app.conveyordata.com/projects/bfeaa8a1-7aaa-45ca-b4b4-145edafdee4e/ides) on conveyor.
 Make sure you are on the IDE tab, and press the button `create a new IDE`.
 
-![](./docs/images/create-ide.png)
+<img src="./docs/images/create-ide.png" width="40%" style="min-width:600px"/>
 
 When launched the IDE will automatically check out the project and:
 - Launch `docker-compose up -d` this launches a local postgres server which can be used during the hackaton

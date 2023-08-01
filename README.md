@@ -29,6 +29,7 @@ We have the following test starter docs:
 - [Unit testing](./docs/unit-testing.md)
 - [Testing with soda](./docs/soda.md)
 - [Contract enforcement](./docs/enforcing-contracts.md)
+- [Macro testing](./docs/macro-testing.md)
 
 
 Some other things you could try out:

@@ -6,7 +6,7 @@ data_source quality_coffee:
     username: postgres
     password: ${POSTGRES_PASSWORD}
     database: webinar
-    schema: quality_coffee
+    schema: ${ENVIRONMENT}
 
 data_source local:
   type: postgres

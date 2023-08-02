@@ -8,7 +8,7 @@ default:
       user: "{{ env_var('POSTGRES_USERNAME', 'postgres') }}"
       password: "{{ env_var('POSTGRES_PASSWORD', 'postgres') }}"
       database: "webinar"
-      schema: "quality_coffee"
+      schema: "{{ env_var('ENVIRONMENT', 'quality_coffee') }}"
 
     conveyor:
       type: conveyor

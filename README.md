@@ -77,3 +77,63 @@ Some other data testing framework you could try out:
 - [re-data](https://github.com/re-data/re-data)
 
 You can also scroll trough the list of projects with the [data-observability](https://github.com/topics/data-observability) tag on github.
+
+## Running the project on Conveyor
+
+Want to run the project on Conveyor? The following instructions help you build and deploy the project to an environment
+on Conveyor.
+
+First we need to create an environment, we can do this with the UI or the CLI. For today let's use the CLI.
+We need to give an environment a name, I suggest your initials for today.
+Open the terminal and execute the following command, after replacing your initials.
+
+```bash
+conveyor env create --name YOURINITIALS
+```
+
+After creating the environment we are ready to build and deploy our project, execute the follwing command:
+
+```bash
+conveyor build
+```
+
+This command will build your project, it will create a docker container from your code and will upload the Airflow dags
+included in the [dags](dags) folder.
+
+After we have created a build we can deploy it to the environment, please use the same environment name as before:
+
+```bash
+conveyor deploy --wait --env YOURINITIALS
+```
+
+This will register the container we just build as active on the environment, and will register the DAGs with Airflow.
+
+We can view the environment by going to the following url: [https://app.conveyordata.com/environments](https://app.conveyordata.com/environments).
+This will show you a list of environments. Find your and click on it this will show you Airflow. If you know Airflow
+free to look around. Otherwise follow our guide to get to know a bit more of Airflow.
+
+First click on the dag named `samples_quality_coffee`:
+
+<img src="./docs/images/select-dag.png" width="40%" style="min-width:800px"/>
+
+This will show you a screen that shows all the tasks defined in the Airflow DAG. They should sounds familier to you as 
+they are:
+
+- seed: runs DBT seed on Conveyor, you would normally not do this in production since you would be running on real data
+- staging: Runs all our models in the [staging folder](./models/staging) 
+- marts: Runs all our models in the [marts folder](./models/marts)
+- soda: Runs our [soda script](./soda/run_soda.sh) after all our models are finished
+
+You can see the logs of these jobs by pressing `task executions`:
+
+<img src="./docs/images/select-task-executions.png" width="40%" style="min-width:800px"/>
+
+This will show you a screen like this:
+
+<img src="./docs/images/task-executions.png" width="40%" style="min-width:800px"/>
+
+In here you can see many tasks and click on them to get some details and logs.
+
+This concludes our short introduction to Conveyor, if you want to know more just talk to the people from Data Minded in
+the hackaton.
+

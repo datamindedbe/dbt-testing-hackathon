@@ -25,6 +25,7 @@ dag = DAG(
     default_args=default_args,
     schedule_interval="@daily",
     max_active_runs=1,
+    is_paused_upon_creation=False,
 )
 
 
@@ -40,6 +41,7 @@ def dbt_task(*, task_id: str, arguments: list[str]) -> ConveyorContainerOperator
             "POSTGRES_PASSWORD": AWSParameterStoreValue(
                 name="/conveyor-samples/postgres_password"
             ),
+            "ENVIRONMENT": Variable.get("environment"),
         },
         arguments=arguments,
     )
@@ -58,6 +60,7 @@ def soda_task(*, task_id: str) -> ConveyorContainerOperatorV2:
                 name="/conveyor-samples/postgres_password"
             ),
             "CONNECTION": "quality_coffee",
+            "ENVIRONMENT": Variable.get("environment"),
         },
         cmds=["bash"],
         arguments=["soda/run_soda.sh"],

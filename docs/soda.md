@@ -1,30 +1,26 @@
 # Testing with soda
 
-soda is a data quality testing framework, you can find their website [here](https://www.soda.io/), and the open source git version [here](https://github.com/sodadata/soda-core).
+Soda is a data quality testing framework, you can find their website [here](https://www.soda.io/), and the open source git version [here](https://github.com/sodadata/soda-core).
 
-We will be using that open source version today, there is already some example code available in the [soda](../soda) folder, and soda has been installed in the virtual environment.
-has run all models.
+We will be using the open source version today, there is already sample code available in the [soda](../soda) folder, and soda has been installed in the virtual environment.
 
-Using `dbt seed` we can populate the local postgres database to with some data. You might hav already done this before.
-
-After that we need to run `dbt run`, to run all the models.
+Soda is typically run on your data after it has been processed so to prepare ourselves. You might have done these steps already but we list them here again:
+- Run `dbt seed` in a terminal to populate the local postgres database to with some data
+- After that please run `dbt run` to run all models
 
 After that we can start doing our Data Quality testing.
-Data quality tests is something you typically only do in production and after your models have run.
 
-After setting everything up you can run the soda tests! You can use
+After setting everything up you can run the soda tests! Use the following command to run soda:
 
 ```bash
 ./soda/run_soda.sh`
 ```
 
-to run the tests defined in `soda/checks.yml`.
+This will run all soda tests defined in [soda/checks.yml](../soda/checks.yml).
+These checks are defined in a language called [soda checks language](https://docs.soda.io/soda-cl/soda-cl-overview.html).
+Please have a look at the file and the [documentation of soda](https://docs.soda.io/soda-cl/soda-cl-overview.html) to see what is possible.
 
-In that file we have defined a lot of checks on the customers table.
-Just have a look at those, after that you can define your own checks on the order table
-You can find the whole specification on the [soda docs](https://docs.soda.io/soda-cl/soda-cl-overview.html).
-
-Some things you could try to implement on the customers table:
+After that you can try to implement som extra checks on the [orders](../models/marts/orders.sql) table:
 
 - Check that we have no duplicate order id
 - Check that the order_total minimum is >= 0, since we can not sell goods with a negative value

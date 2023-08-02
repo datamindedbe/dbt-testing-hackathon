@@ -8,10 +8,10 @@ you can refer to blogpost [Testing frameworks in dbt](https://medium.com/datamin
 
 ## Getting started on Conveyor during the hackaton
 
-During the Hackaton people get a login for a Conveyor installation, please go to [Conveyor](https://app.conveyordata.com) and log in.
-
-After that go to the [dbt-testing-hackaton project](https://app.conveyordata.com/projects/bfeaa8a1-7aaa-45ca-b4b4-145edafdee4e/ides) on conveyor.
-Make sure you are on the IDE tab, and press the button `create a new IDE`.
+During the Hackaton people get a login for a Conveyor installation,
+please go to dbt-testing-hackaton project in Conveyor by following this [link](https://app.conveyordata.com/projects/bfeaa8a1-7aaa-45ca-b4b4-145edafdee4e/ides).
+Please log in when prompted to do so. After logging in you should see the same windows as shown below.
+Please press the button `create a new IDE`, to launch your IDE.
 
 <img src="./docs/images/create-ide.png" width="40%" style="min-width:600px"/>
 
@@ -23,13 +23,17 @@ This will open a modal, in that modal select the `dev` environment and press the
 ## After launching an IDE on Conveyor
 
 
-
 When launched the IDE will automatically check out the project and automatically op this README again. It will also
 automatically do the following:
-- Launch `docker-compose up -d` this launches a local postgres server which can be used during the hackaton
+- It woull automatically launch a local postgres server which can be used during the hackaton
 - It will automatically install the virtual environment, and set up DBT and our testing packages.
 
-After this automatic setup is done you can start using dbt, to set up the necessary data for our testing please run:
+After this automatic setup is done you can start using dbt, to set up the necessary data. Open a terminal in vscode:
+
+<img src="./docs/images/open-terminal.png" width="40%" style="min-width:300px"/>
+
+
+After that run the following command in the terminal to populate the database with fake data:
 
 ```bash
 dbt seed

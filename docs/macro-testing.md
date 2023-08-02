@@ -17,9 +17,8 @@ To get started create the following file: [macros/truncate_to_timespan.sql](../m
 And copy the following content into it:
 
 ```sql
-{# A basic example truncate a table to a certain date range #}
-{% macro truncate_to_timespan(column_name) -%}
-{% set truncate_timespan_to = var('truncate_timespan_to') %}
+{# A basic example truncate a table to a certain date #}
+{% macro truncate_to_timespan(column_name, truncate_timespan_to = var('truncate_timespan_to')) -%}
 {{ column_name }} <= {{ truncate_timespan_to }}
 {%- endmacro %}
 ```
@@ -27,14 +26,11 @@ And copy the following content into it:
 We can then write a test for this in the same vein as [tests/macros/test_macro_cents_to_dollars.sql](../tests/macros/test_macro_cents_to_dollars.sql).
 Go ahead and create a new file `tests/macros/test_macro_truncate_to_timespan.sql` and try to write a test for our newly created macro.
 
-To test this out you can use the following strategy, create a table with all a data column and input some dates into the future.
-The macro `truncate_timespan_to` will be default use the var `truncate_timespan_to` to filter your table.
-And the default value is the current timestamp. So dates into the future should be filtered out.
-Then do a sql query `select * from input where  {{ truncate_to_timespan("input_col") }}`, this should filter out all
-rows on the given input.
-DBT tests expect no columns to be returned when the test succeeds so make sure that is the case.
+To test this out you can use the following strategy, create a table with all a data column and input multiple dates. You can cast a string to a date in sql using the follwing syntax `'2022-11-11'::date`, then just like the [macro cents to dollars test](../tests/macros/test_macro_cents_to_dollars.sql), you should add a new column to the table that uses the macro.
 
-To run your test you can run:
+By default our macro uses the var `truncate_timespan_to`, but we can override the value in our test making it easy to decide a cutoff point. You can add it in the code like this: `{{ truncate_to_timespan("input_col", "cast('2023-01-01' as date)") }}`.
+
+This should give you all the ingredients to make a unit test for the macro. To test out your implementation run:
 
 ```bash
 dbt test -s test_macro_truncate_to_timespan

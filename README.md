@@ -10,6 +10,7 @@ you can refer to blogpost [Testing frameworks in dbt](https://medium.com/datamin
 
 During the Hackaton people get a login for a Conveyor installation,
 please go to dbt-testing-hackaton project in Conveyor by following this [link](https://app.conveyordata.com/projects/bfeaa8a1-7aaa-45ca-b4b4-145edafdee4e/ides).
+
 Please log in when prompted to do so. After logging in you should see the same windows as shown below.
 Please press the button `create a new IDE`, to launch your IDE.
 
@@ -27,6 +28,9 @@ When launched the IDE will automatically check out the project and automatically
 automatically do the following:
 - It woull automatically launch a local postgres server which can be used during the hackaton
 - It will automatically install the virtual environment, and set up DBT and our testing packages.
+
+Sometimes the python plugin shows a failure at the bottom right, when this happens you need to click on it and set the virtual environment
+to ```use Python from `python.defaultInterpreterPath` setting `./venv/bin/python````. This works correctly 90% of the time. Don't hesitate to reach out if you need help during the hackaton.
 
 After this automatic setup is done you can start using dbt, to set up the necessary data. Open a terminal in vscode:
 

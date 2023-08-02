@@ -30,7 +30,12 @@ automatically do the following:
 - It will automatically install the virtual environment, and set up DBT and our testing packages.
 
 Sometimes the python plugin shows a failure at the bottom right, when this happens you need to click on it and set the virtual environment
-to ```use Python from `python.defaultInterpreterPath` setting `./venv/bin/python````. This works correctly 90% of the time. Don't hesitate to reach out if you need help during the hackaton.
+to:
+```
+use Python from `python.defaultInterpreterPath` setting `./venv/bin/python`
+```
+
+This works correctly 90% of the time. Don't hesitate to reach out if you need help during the hackaton. If there is no failure please just continue.
 
 After this automatic setup is done you can start using dbt, to set up the necessary data. Open a terminal in vscode:
 

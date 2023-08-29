@@ -13,6 +13,7 @@ install:
 	( \
        . venv/bin/activate; \
        pip install -r requirements.txt; \
+       dbt deps ; \
     )
 
 docker-compose-up:

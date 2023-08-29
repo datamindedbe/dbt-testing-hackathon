@@ -14,9 +14,9 @@
       }
     },
     {
-      "label": "Setting up the virtual env",
+      "label": "DBT setup",
       "type": "shell",
-      "command": "echo 'installing the virtual env' && make install",
+      "command": "echo 'setting up DBT' && make install",
       "presentation": {
         "reveal": "always",
         "panel": "new"
@@ -24,21 +24,6 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
-    },
-    {
-      "label": "Install dpt deps",
-      "type": "shell",
-      "command": ". venv/bin/activate && dbt deps",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
-      },
-      "dependsOn": [
-        "Setting up the virtual env"
-      ]
     }
   ]
 }

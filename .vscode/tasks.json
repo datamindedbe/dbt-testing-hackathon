@@ -16,7 +16,7 @@
     {
       "label": "DBT setup",
       "type": "shell",
-      "command": "echo 'setting up DBT' && make install",
+      "command": "echo 'setting up DBT' && make install && make install-dbt-power-user",
       "presentation": {
         "reveal": "always",
         "panel": "new"

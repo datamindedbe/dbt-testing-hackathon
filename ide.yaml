@@ -3,3 +3,8 @@ vscode:
     - mtxr.sqltools@0.28.0
     - mtxr.sqltools-driver-pg@0.5.1
     - innoverio.vscode-dbt-power-user
+buildSteps:
+  - name: install venv
+    cmd: |
+      python -m venv /home/conveyor/venv
+      pip install dbt-core==1.5.2

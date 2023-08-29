@@ -8,13 +8,15 @@ requirements:
 clean:
 	rm -rf venv
 
-install:
-	python -m venv venv
+install-ide:
 	( \
-       . venv/bin/activate; \
+       . /home/conveyor/venv/bin/activate; \
        pip install -r requirements.txt; \
        dbt deps ; \
     )
+
+install-extension:
+	code-server --install-extension innoverio.vscode-dbt-power-user
 
 docker-compose-up:
 	echo "POSTGRES_HOST=localhost" > infra/.env

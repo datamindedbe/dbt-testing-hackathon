@@ -7,4 +7,5 @@ buildSteps:
   - name: install venv
     cmd: |
       python -m venv /home/conveyor/venv
-      pip install dbt-core==1.5.2
+      . /home/conveyor/venv/bin/activate
+      pip install dbt-postgres==1.5.2

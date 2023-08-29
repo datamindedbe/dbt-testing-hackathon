@@ -12,5 +12,8 @@
             "username": "postgres",
             "password": "postgres"
         }
-    ]
+    ],
+    "files.associations": {
+        "*.sql": "jinja-sql"
+    }
 }

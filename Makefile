@@ -15,9 +15,6 @@ install-ide:
        dbt deps ; \
     )
 
-install-extension:
-	code-server --install-extension innoverio.vscode-dbt-power-user
-
 docker-compose-up:
 	echo "POSTGRES_HOST=localhost" > infra/.env
 	echo "POSTGRES_PORT=5432" > .env

@@ -13,7 +13,7 @@ After that we can start doing our Data Quality testing.
 After setting everything up you can run the soda tests! Use the following command to run soda:
 
 ```bash
-./soda/run_soda.sh`
+./soda/run_soda.sh
 ```
 
 This will run all soda tests defined in [soda/checks.yml](../soda/checks.yml).
